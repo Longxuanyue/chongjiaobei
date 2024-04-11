@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>计算器</title>
+    <meta charset="utf-8">
+    <style>
+        /* CSS */
+        #calculator {
+            margin: 20px;
+            /* 外边距 */
+            padding: 20px;
+            /* 内边距 */
+            border: 5px solid #ccc;
+            /* 边框 */
+            background-color: #c1d6f8;
+            margin: 0 auto;
+            /* 居中 */
+        }
+
+        #totalScore {
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            /* 加粗 */
+        }
+
+        #tag,
+        #totalScore {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        #tag form {
+            display: flex;
+            /* 弹性布局 */
+            flex-wrap: wrap;
+            /* 换行 */
+        }
+
+        #tag label,
+        #ganyuan label,
+        #etcscore label,
+        #etc label {
+            width: 150px;
+        }
+
+        #ganyuan input,
+        #etcscore input,
+        #etc input {
+            width: 200px;
+        }
+
+        #gouxuanxiang>div {
+            border-bottom: 1px solid #ccc;
+        }
+
+        #gouxuanxiang input {
+            width: auto;
+            margin: 0 5px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculator">
+        <div id="tag">
+            <form>
+                <label for="gamescore">局内得分</label>
+                <input type="number" id="gamescore" value="0">
+                <label for="level">合约等级</label>
+                <input type="number" id="level" value="0">
+                <label for="deletescore">罚分</label>
+                <input type="number" id="deletescore" value="0">
+                <div id="ganyuan">
+                    <label for="ganyuan06">临时六星干员数量</label>
+                    <input type="number" id="ganyuan06" value="0">
+                    <label for="ganyuan05">临时五星干员数量</label>
+                    <input type="number" id="ganyuan05" value="0">
+                    <label for="ganyuan04">临时四星干员数量</label>
+                    <input type="number" id="ganyuan04" value="0">
+                </div>
+                <div id="etcscore">
+                    <label for="shoucangpin">藏品数</label>
+                    <input type="number" id="shoucangpin" value="0">
+                    <label for="miwenban">密文板</label>
+                    <input type="number" id="miwenban" value="0">
+                    <label for="yincang">隐藏敌人</label>
+                    <input type="number" id="yincang" value="0">
+                </div>
+                <div id="gouxuanxiang">
+                    <div id="jinjizuozhan">
+                        <div id="jj3">
+                            <label for="bhyy">冰海疑影</label>
+                            <input type="checkbox" id="bhyy">
+                            <label for="bhyylw">冰海疑影·路网</label>
+                            <input type="checkbox" id="bhyylw">
+                        </div>
+                        <div id="jj4">
+                            <label for="gongsi">公司纠葛</label>
+                            <input type="checkbox" id="gongsi">
+                            <label for="gongsilw">公司纠葛·路网</label>
+                            <input type="checkbox" id="gongsilw">
+                            <label for="tansuo">坍缩体的午后</label>
+                            <input type="checkbox" id="tansuo">
+                        </div>
+                        <div id="jj5">
+                            <label for="rongyu">人造物狂欢节</label>
+                            <input type="checkbox" id="rongyu">
+                            <label for="rongyulw">人造物狂欢节·路网</label>
+                            <input type="checkbox" id="rongyulw">
+                            <label for="wanger">亡者行军</label>
+                            <input type="checkbox" id="wanger">
+                            <label for="wangerlw">亡者行军·路网</label>
+                            <input type="checkbox" id="wangerlw">
+                            <label for="leili">乐理之灾</label>
+                            <input type="checkbox" id="leili">
+                            <label for="leililw">乐理之灾·路网</label>
+                            <input type="checkbox" id="leililw">
+                            <label for="benneng">本能污染</label>
+                            <input type="checkbox" id="benneng">
+                        </div>
+                        <div id="jj6">
+                            <label for="shenghu">生灵的终点</label>
+                            <input type="checkbox" id="shenghu">
+                        </div>
+                    </div>
+                    <div id="xianluedi">
+                        <label for="donghua">大地醒转</label>
+                        <input type="checkbox" id="donghua">
+                        <label for="xiuhu">呼吸</label>
+                        <input type="checkbox" id="xiuhu">
+                        <label for="duotree">夺树者</label>
+                        <input type="checkbox" id="duotree">
+                        <label for="saimi">萨米之殇</label>
+                        <input type="checkbox" id="saimi">
+                        <label for="yuanjing">园丁</label>
+                        <input type="checkbox" id="yuanjing">
+                        <label for="maiyin">迈入永恒</label>
+                        <input type="checkbox" id="maiyin">
+                        <label for="shigong">时光之沙</label>
+                        <input type="checkbox" id="shigong">
+                        <label for="shuangshi">深寒造像</label>
+                        <input type="checkbox" id="shuangshi">
+                        <label for="xianwu">虚无之偶</label>
+                        <input type="checkbox" id="xianwu">
+                        <label for="shouqian">哨兵</label>
+                        <input type="checkbox" id="shouqian">
+                    </div>
+                </div>
+                <div id="etc">
+                    <label for="jiejuetc">结局组合额外加分</label>
+                    <input type="number" id="jiejuetc" value="0">
+                    <label for="teshuetc">特殊关卡额外加分</label>
+                    <input type="number" id="teshuetc" value="0">
+                    <label for="heyuetagetc">合约tag赏罚分</label>
+                    <input type="number" id="heyuetagetc" value="0">
+                </div>
+            </form>
+        </div>
+        <button onclick="calculate()">计算</button>
+        <div id="totalScore">总得分： <span id="totalScoreValue">0</span></div>
+    </div>
+</body>
+
+<script>
+    function calculateTotalScore() {
+        // 获取输入的值
+        var gamescore = parseInt(document.getElementById('gamescore').value);
+        var level = parseInt(document.getElementById('level').value);
+        var deletescore = parseInt(document.getElementById('deletescore').value);
+        var ganyuan06 = parseInt(document.getElementById('ganyuan06').value);
+        var ganyuan05 = parseInt(document.getElementById('ganyuan05').value);
+        var ganyuan04 = parseInt(document.getElementById('ganyuan04').value);
+        var shoucangpin = parseInt(document.getElementById('shoucangpin').value);
+        var miwenban = parseInt(document.getElementById('miwenban').value);
+        var yincang = parseInt(document.getElementById('yincang').value);
+        var totalScore = 0;
+
+        // 计算临时干员数量的分数
+        var ganyuanScore = ganyuan06 * 50 + ganyuan05 * 20 + ganyuan04 * 10;
+
+        // 计算藏品、密文板和隐藏敌人的分数
+        var etcScore = shoucangpin * 10 + miwenban * 5 + yincang * 20;
+
+        // 计算选择项的分数
+        var tagScore = 0;
+        // 三层紧急  
+        if (document.getElementById('bhyy').checked) {
+            tagScore += 20; // 冰海疑影  
+        }
+        if (document.getElementById('bhyylw').checked) {
+            tagScore += 30; // 冰海疑影·路网  
+        }
+
+        // 四层紧急  
+        if (document.getElementById('gongsi').checked) {
+            tagScore += 20; // 公司纠葛  
+        }
+        if (document.getElementById('gongsilw').checked) {
+            tagScore += 30; // 公司纠葛·路网  
+        }
+        if (document.getElementById('tansuo').checked) {
+            tagScore += 20; // 坍缩体的午后  
+        }
+
+        // 五层紧急  
+        if (document.getElementById('rongyu').checked) {
+            tagScore += 90; // 人造物狂欢节  
+        }
+        if (document.getElementById('rongyulw').checked) {
+            tagScore += 110; // 人造物狂欢节·路网  
+        }
+        if (document.getElementById('wanger').checked) {
+            tagScore += 50; // 亡者行军  
+        }
+        if (document.getElementById('wangerlw').checked) {
+            tagScore += 70; // 亡者行军·路网  
+        }
+        if (document.getElementById('leili').checked) {
+            tagScore += 35; // 乐理之灾  
+        }
+        if (document.getElementById('leililw').checked) {
+            tagScore += 55; // 乐理之灾·路网  
+        }
+        if (document.getElementById('benneng').checked) {
+            tagScore += 50; // 本能污染  
+        }
+
+        // 六层紧急  
+        if (document.getElementById('shenghu').checked) {
+            tagScore += 90; 
+        }
+
+        // 三层隐藏  
+        if (document.getElementById('donghua').checked) {
+            tagScore += 50; // 大地醒转（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('xiuhu').checked) {
+            tagScore += 50; // 呼吸（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('duotree').checked) {
+            tagScore += 50; // 夺树者（注意：此ID需要在HTML中定义）  
+        }
+
+        // 结局  
+        if (document.getElementById('saimi').checked) {
+            tagScore += 30; // 萨米之殇（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('yuanjing').checked) {
+            tagScore += 50; // 园丁（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('maiyin').checked) {
+            tagScore += 200; // 迈入永恒（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('shigong').checked) {
+            tagScore += 150; // 时光之沙（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('shuangshi').checked) {
+            tagScore += 150; // 深寒造像（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('xianwu').checked) {
+            tagScore += 120; // 虚无之偶（注意：此ID需要在HTML中定义）  
+        }
+        if (document.getElementById('shouqian').checked) {
+            tagScore += 300; // 哨兵（注意：此ID需要在HTML中定义）  
+        }
+        // 其他tag的计算省略，按照以上的方式计算并累加到tagScore中
+
+        // 计算结局组合额外加分和特殊关卡额外加分
+        var etc = parseInt(document.getElementById('jiejuetc').value) + parseInt(document.getElementById('teshuetc').value) + parseInt(document.getElementById('heyuetagetc').value);
+
+        // 计算总得分
+        var totalScore = level * 20 + gamescore + ganyuanScore + etcScore + tagScore + etc - deletescore;
+
+        // 更新页面显示的总得分
+        document.getElementById('totalScoreValue').innerText = totalScore;
+    }
+
+    //针对<button onclick="calculate()">计算</button>的点击事件，即点击后调用calculateTotalScore()函数
+    function calculate() {
+        calculateTotalScore();
+    }
+
+</script>
+
+</html>
