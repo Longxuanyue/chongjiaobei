@@ -22,8 +22,14 @@
             animation-fill-mode: forwards;
         } */
 
-        #selection-table {
+        .selectiontable {
             width: 100%;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        #selection-table {
+            width: 2500px;
             border-collapse: collapse;
             margin-bottom: 10px;
         }
@@ -33,6 +39,13 @@
             border: 1px solid #000;
             padding: 5px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #selection-table tbody td {
+            white-space: nowrap;
         }
 
         .selectable {
@@ -68,7 +81,7 @@
 
 <body>
     <h1>天嚣行动合约表</h1>
-    <div>
+    <div class="selectiontable">
         <table id="selection-table">
             <tr level>
                 <th>Ⅰ</th>
@@ -82,11 +95,13 @@
                 <td class="selectable" data-description="分队·职业合约">分队·职业合约</td>
                 <td class="selectable" data-description="分队·科考合约">分队·科考合约</td>
                 <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·最后防线Ⅰ">目标·最后防线Ⅰ</td>
                 <td class="selectable" data-description="环境·资金困难Ⅰ">环境·资金困难Ⅰ</td>
                 <td class="selectable" data-description="坎诺特·律法保护">坎诺特·律法保护</td>
                 <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="密文板·无效因果Ⅰ">密文板·无效因果Ⅰ</td>
+                <td class="selectable" data-description="密文板·混乱布局Ⅰ">密文板·混乱布局Ⅰ</td>
+                <td class="selectable" data-description="收藏品·缺失Ⅰ">收藏品·缺失Ⅰ</td>
             </tr>
             <tr level=2>
                 <th>Ⅱ</th>
@@ -99,12 +114,14 @@
                 <td class="selectable" data-description="目标·通讯干扰">目标·通讯干扰</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description="木裂战士·无畏冲锋">木裂战士·无畏冲锋</td>
-                <td class="selectable" data-description="木裂战士·清醒意识">木裂战士·清醒意识</td>
+                <td class="selectable" data-description="失与得·无人生还">失与得·无人生还</td>
                 <td class="selectable" data-description="目标·最后防线Ⅱ">目标·最后防线Ⅱ</td>
                 <td class="selectable" data-description="环境·资金困难Ⅱ">环境·资金困难Ⅱ</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="环境·交战区">环境·交战区</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
             </tr>
             <tr level=3>
                 <th>Ⅲ</th>
@@ -118,9 +135,11 @@
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·最后防线Ⅲ">目标·最后防线Ⅲ</td>
                 <td class="selectable" data-description="环境·资金困难Ⅲ">环境·资金困难Ⅲ</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
             </tr>
@@ -147,10 +166,12 @@
             ["目标·有限支援", "目标·通讯干扰", "目标·孤立无援"],
             ["分队·职业合约", "分队·科考合约"],
             ["目标·最后防线Ⅰ", "目标·最后防线Ⅱ", "目标·最后防线Ⅲ"],
-            ["木裂战士·无畏冲锋", "木裂战士·清醒意识"],
+            ["失与得·无人生还"],
             ["环境·资金困难Ⅰ", "环境·资金困难Ⅱ", "环境·资金困难Ⅲ"],
             ["坎诺特·律法保护"],
-            ["环境·交战区"]
+            ["环境·交战区"],
+            ["密文板·无效因果Ⅰ", "密文板·无效因果Ⅱ", "密文板·混乱布局Ⅰ", "密文板·混乱布局Ⅱ", "密文板·无解未来"],
+            ["收藏品·缺失Ⅰ", "收藏品·缺失Ⅱ", "收藏品·缺失Ⅲ"]
         ];
 
         // 定义单元格等级映射关系
@@ -169,8 +190,7 @@
             "目标·孤立无援": 3,
             "分队·职业合约": 1,
             "分队·科考合约": 1,
-            "木裂战士·无畏冲锋": 2,
-            "木裂战士·清醒意识": 2,
+            "失与得·无人生还": 2,
             "坎诺特·律法保护": 1,
             "环境·交战区": 2,
             "目标·折戟Ⅰ": 1,
@@ -184,7 +204,16 @@
             "目标·最后防线Ⅲ": 3,
             "环境·资金困难Ⅰ": 1,
             "环境·资金困难Ⅱ": 2,
-            "环境·资金困难Ⅲ": 3
+            "环境·资金困难Ⅲ": 3,
+            "密文板·无效因果Ⅰ": 1,
+            "密文板·无效因果Ⅱ": 2,
+            "密文板·混乱布局Ⅰ": 1,
+            "密文板·混乱布局Ⅱ": 2,
+            "密文板·无解未来": 3,
+            "收藏品·缺失Ⅰ": 1,
+            "收藏品·缺失Ⅱ": 2,
+            "收藏品·缺失Ⅲ": 3,
+            "环境·前路未卜":2
         };
 
         // 用于保存当前所选标签
@@ -212,13 +241,21 @@
             "目标·最后防线Ⅰ": false,
             "目标·最后防线Ⅱ": false,
             "目标·最后防线Ⅲ": false,
-            "木裂战士·无畏冲锋": false,
-            "木裂战士·清醒意识": false,
+            "失与得·无人生还": false,
             "环境·资金困难Ⅰ": false,
             "环境·资金困难Ⅱ": false,
             "环境·资金困难Ⅲ": false,
             "坎诺特·律法保护": false,
-            "环境·交战区": false
+            "环境·交战区": false,
+            "密文板·无效因果Ⅰ": false,
+            "密文板·无效因果Ⅱ": false,
+            "密文板·混乱布局Ⅰ": false,
+            "密文板·混乱布局Ⅱ": false,
+            "密文板·无解未来": false,
+            "收藏品·缺失Ⅰ": false,
+            "收藏品·缺失Ⅱ": false,
+            "收藏品·缺失Ⅲ": false,
+            "环境·前路未卜":false
         };
         //每个标签的描述
         const tagDescriptions = {
@@ -242,8 +279,7 @@
             "目标·孤立无援": "临时招募干员数不可超过1名，且不可招募临时6星干员，但总得分额外 + 150分",
             "分队·职业合约": "仅可选择突击战术、堡垒战术、远程战术、破坏战术、高规格、永恒狩猎、生活至上、科学主义、特训分队，团队赛时每名选手不可选择相同分队",
             "分队·科考合约": "仅可选择指挥、集群、矛头、后勤、永恒狩猎、生活至上、科学主义、特训分队，团队赛时每名选手不可选择相同分队",
-            "木裂战士·清醒意识": "在第四层、第五层的任意一层战斗中，木裂战士免疫眩晕、冰冻、睡眠（操作实现）。若在成功通关结局之前未执行则视作未选取",
-            "木裂战士·无畏冲锋": "在第四层、第五层的任意一层战斗中，木裂战士免疫束缚、停顿（操作实现）。若在成功通关结局之前未执行则视作未选取",
+            "失与得·无人生还": "不可从失与得节点中换取密文板和收藏品",
             "环境·资金困难Ⅰ": "团队可取源石锭数额减少30 %",
             "环境·资金困难Ⅱ": "团队可取源石锭数额减少35 %",
             "环境·资金困难Ⅲ": "团队可取源石锭数额减少40 %，且不可补充金额",
@@ -252,7 +288,16 @@
             "环境·交战区": "团队总招募六星干员数不可超过20，临时招募与核心干员不算",
             "目标·最后防线Ⅰ": "本次探索，除区域最终战外，至多3次战斗允许敌人进入我方防御点，每超出1次扣除25分。团队赛时全体队员共享次数，至多10次战斗允许敌人进入我方防御点，每超出1次扣除团队总分50分。",
             "目标·最后防线Ⅱ": "本次探索，除区域最终战外，至多3次战斗允许敌人进入我方防御点，每超出1次扣除25分。团队赛时全体队员共享次数，至多8次战斗允许敌人进入我方防御点，每超出1次扣除团队总分50分。",
-            "目标·最后防线Ⅲ": "本次探索，除区域最终战外，至多3次战斗允许敌人进入我方防御点，每超出1次扣除25分。团队赛时全体队员共享次数，至多6次战斗允许敌人进入我方防御点，每超出1次扣除团队总分50分。"
+            "目标·最后防线Ⅲ": "本次探索，除区域最终战外，至多3次战斗允许敌人进入我方防御点，每超出1次扣除25分。团队赛时全体队员共享次数，至多6次战斗允许敌人进入我方防御点，每超出1次扣除团队总分50分。",
+            "密文板·无效因果Ⅰ": "持有的因果密文板数量不可超过5",
+            "密文板·无效因果Ⅱ": "持有的因果密文板数量不可超过3",
+            "密文板·混乱布局Ⅰ": "持有的布局密文板数量不可超过5",
+            "密文板·混乱布局Ⅱ": "持有的布局密文板数量不可超过3",
+            "密文板·无解未来": "持有的密文板数量不可超过6",
+            "收藏品·缺失Ⅰ": "禁止选取支援道具，通过古地树实获取的收藏品不做计算",
+            "收藏品·缺失Ⅱ": "禁止选取支援道具、手系专业道具，通过古地树实获取的收藏品不做计算",
+            "收藏品·缺失Ⅲ": "禁止选取支援道具、手系专业道具、支柱系道具，通过古地树实获取的收藏品不做计算",
+            "环境·前路未卜": "先行一步节点中不可派遣干员"
         }
         const clearButton = document.getElementById('clear-button');
         clearButton.addEventListener('click', function () {
