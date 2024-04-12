@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集成战略：天嚣行动</title>
+    <style>
+        /* @keyframes highlight {
+            0% {
+                background-color: yellow;
+            }
+
+            100% {
+                background-color: white;
+            }
+        }
+
+        p {
+            animation-name: highlight;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        } */
+
+        .selectiontable {
+            width: 100%;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        #selection-table {
+            width: 2500px;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        #selection-table th,
+        #selection-table td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        #selection-table tbody td {
+            white-space: nowrap;
+        }
+
+        .selectable {
+            cursor: pointer;
+        }
+
+        .selected {
+            background-color: #076f92;
+            color: #fff;
+        }
+
+        #selected-description {
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #000;
+            min-height: 50px;
+        }
+
+        .disabled {
+            background-color: #ccc;
+            text-decoration: line-through;
+            color: #000;
+        }
+
+        /* 表格头部的样式 */
+        #selection-table th {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>天嚣行动合约表</h1>
+    <div class="selectiontable">
+        <table id="selection-table">
+            <tr>
+                <th>Ⅰ</th>
+                <td class="selectable" data-description="目标·折戟Ⅰ">目标·折戟Ⅰ</td>
+                <td class="selectable" data-description="目标·盲目Ⅰ">目标·盲目Ⅰ</td>
+                <td class="selectable" data-description="环境·大风天">环境·大风天</td>
+                <td class="selectable" data-description="探险组·环境科考">探险组·环境科考</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="目标·有限支援">目标·有限支援</td>
+                <td class="selectable" data-description="分队·职业合约">分队·职业合约</td>
+                <td class="selectable" data-description="分队·科考合约">分队·科考合约</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="目标·最后防线Ⅰ">目标·最后防线Ⅰ</td>
+                <td class="selectable" data-description="环境·资金困难Ⅰ">环境·资金困难Ⅰ</td>
+                <td class="selectable" data-description="坎诺特·律法保护">坎诺特·律法保护</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="密文板·无效因果Ⅰ">密文板·无效因果Ⅰ</td>
+                <td class="selectable" data-description="密文板·混乱布局Ⅰ">密文板·混乱布局Ⅰ</td>
+                <td class="selectable" data-description="收藏品·缺失Ⅰ">收藏品·缺失Ⅰ</td>
+                <td class="selectable" data-description=""></td>
+            </tr>
+            <tr>
+                <th>Ⅱ</th>
+                <td class="selectable" data-description="目标·折戟Ⅱ">目标·折戟Ⅱ</td>
+                <td class="selectable" data-description="目标·盲目Ⅱ">目标·盲目Ⅱ</td>
+                <td class="selectable" data-description="环境·暴风雪">环境·暴风雪</td>
+                <td class="selectable" data-description="探险组·模因干扰">探险组·模因干扰</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="目标·通讯干扰">目标·通讯干扰</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="失与得·无人生还">失与得·无人生还</td>
+                <td class="selectable" data-description="目标·最后防线Ⅱ">目标·最后防线Ⅱ</td>
+                <td class="selectable" data-description="环境·资金困难Ⅱ">环境·资金困难Ⅱ</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="环境·交战区">环境·交战区</td>
+                <td class="selectable" data-description="密文板·无效因果Ⅱ">密文板·无效因果Ⅱ</td>
+                <td class="selectable" data-description="密文板·混乱布局Ⅱ">密文板·混乱布局Ⅱ</td>
+                <td class="selectable" data-description="收藏品·缺失Ⅱ">收藏品·缺失Ⅱ</td>
+                <td class="selectable" data-description="环境·前路未卜">环境·前路未卜</td>
+            </tr>
+            <tr>
+                <th>Ⅲ</th>
+                <td class="selectable" data-description="目标·折戟Ⅲ">目标·折戟Ⅲ</td>
+                <td class="selectable" data-description="目标·盲目Ⅲ">目标·盲目Ⅲ</td>
+                <td class="selectable" data-description="环境·寒灾">环境·寒灾</td>
+                <td class="selectable" data-description="探险组·挑战自然">探险组·挑战自然</td>
+                <td class="selectable" data-description="探险组·直面天灾">探险组·直面天灾</td>
+                <td class="selectable" data-description="目标·孤立无援">目标·孤立无援</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="目标·最后防线Ⅲ">目标·最后防线Ⅲ</td>
+                <td class="selectable" data-description="环境·资金困难Ⅲ">环境·资金困难Ⅲ</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="密文板·无解未来">密文板·无解未来</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="收藏品·缺失Ⅲ">收藏品·缺失Ⅲ</td>
+                <td class="selectable" data-description=""></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button id="clear-button" style="margin-bottom: 10px;">清空</button>
+    </div>
+    <div id="total-level">当前合约等级：<span id="level-count">0</span></div>
+    <div id="selected-description"></div>
+
+    <script>
+        const table = document.getElementById('selection-table');// 表格
+        const descriptionDiv = document.getElementById('selected-description');// 描述
+        const levelCountSpan = document.getElementById('level-count');// 合约等级
+        let levelCount = 0;// 合约等级
+
+        // 标签组，每组中只能选一个
+        const tagGroups = [
+            ["目标·支援限制", "目标·信号干扰"],
+            ["目标·折戟Ⅰ", "目标·折戟Ⅱ", "目标·折戟Ⅲ", "目标·盲目Ⅰ", "目标·盲目Ⅱ", "目标·盲目Ⅲ"],
+            ["环境·大风天", "环境·暴风雪", "环境·寒灾"],
+            ["探险组·环境科考", "探险组·模因干扰", "探险组·挑战自然", "探险组·直面天灾"],
+            ["目标·有限支援", "目标·通讯干扰", "目标·孤立无援"],
+            ["分队·职业合约", "分队·科考合约"],
+            ["目标·最后防线Ⅰ", "目标·最后防线Ⅱ", "目标·最后防线Ⅲ"],
+            ["失与得·无人生还", "木裂战士·清醒意识"],
+            ["环境·资金困难Ⅰ", "环境·资金困难Ⅱ", "环境·资金困难Ⅲ"],
+            ["坎诺特·律法保护"],
+            ["环境·交战区"],
+            ["密文板·无效因果Ⅰ", "密文板·无效因果Ⅱ", "密文板·混乱布局Ⅰ", "密文板·混乱布局Ⅱ", "密文板·无解未来"],
+            ["收藏品·缺失Ⅰ", "收藏品·缺失Ⅱ", "收藏品·缺失Ⅲ"],
+            ["环境·前路未卜"]
+        ];
+
+        // 定义单元格等级映射关系
+        const tagLevels = {
+            "目标·支援限制": 1,
+            "目标·信号干扰": 2,
+            "环境·大风天": 1,
+            "环境·暴风雪": 2,
+            "环境·寒灾": 3,
+            "探险组·环境科考": 1,
+            "探险组·模因干扰": 2,
+            "探险组·挑战自然": 3,
+            "探险组·直面天灾": 3,
+            "目标·有限支援": 1,
+            "目标·通讯干扰": 2,
+            "目标·孤立无援": 3,
+            "分队·职业合约": 1,
+            "分队·科考合约": 1,
+            "失与得·无人生还": 2,
+            "木裂战士·清醒意识": 2,
+            "坎诺特·律法保护": 1,
+            "环境·交战区": 2,
+            "目标·折戟Ⅰ": 1,
+            "目标·折戟Ⅱ": 2,
+            "目标·折戟Ⅲ": 3,
+            "目标·盲目Ⅰ": 1,
+            "目标·盲目Ⅱ": 2,
+            "目标·盲目Ⅲ": 3,
+            "目标·最后防线Ⅰ": 1,
+            "目标·最后防线Ⅱ": 2,
+            "目标·最后防线Ⅲ": 3,
+            "环境·资金困难Ⅰ": 1,
+            "环境·资金困难Ⅱ": 2,
+            "环境·资金困难Ⅲ": 3,
+            "密文板·无效因果Ⅰ": 1,
+            "密文板·无效因果Ⅱ": 2,
+            "密文板·混乱布局Ⅰ": 1,
+            "密文板·混乱布局Ⅱ": 2,
+            "密文板·无解未来": 3,
+            "收藏品·缺失Ⅰ": 1,
+            "收藏品·缺失Ⅱ": 2,
+            "收藏品·缺失Ⅲ": 3,
+            "环境·前路未卜":2
+        };
+
+        // 用于保存当前所选标签
+        let selectedTags = {
+            "目标·支援限制": false,
+            "目标·信号干扰": false,
+            "目标·折戟Ⅰ": false,
+            "目标·折戟Ⅱ": false,
+            "目标·折戟Ⅲ": false,
+            "目标·盲目Ⅰ": false,
+            "目标·盲目Ⅱ": false,
+            "目标·盲目Ⅲ": false,
+            "环境·大风天": false,
+            "环境·暴风雪": false,
+            "环境·寒灾": false,
+            "探险组·环境科考": false,
+            "探险组·模因干扰": false,
+            "探险组·挑战自然": false,
+            "探险组·直面天灾": false,
+            "目标·有限支援": false,
+            "目标·通讯干扰": false,
+            "目标·孤立无援": false,
+            "分队·职业合约": false,
+            "分队·科考合约": false,
+            "目标·最后防线Ⅰ": false,
+            "目标·最后防线Ⅱ": false,
+            "目标·最后防线Ⅲ": false,
+            "失与得·无人生还": false,
+            "木裂战士·清醒意识": false,
+            "环境·资金困难Ⅰ": false,
+            "环境·资金困难Ⅱ": false,
+            "环境·资金困难Ⅲ": false,
+            "坎诺特·律法保护": false,
+            "环境·交战区": false,
+            "密文板·无效因果Ⅰ": false,
+            "密文板·无效因果Ⅱ": false,
+            "密文板·混乱布局Ⅰ": false,
+            "密文板·混乱布局Ⅱ": false,
+            "密文板·无解未来": false,
+            "收藏品·缺失Ⅰ": false,
+            "收藏品·缺失Ⅱ": false,
+            "收藏品·缺失Ⅲ": false,
+            "环境·前路未卜":false
+        };
+        //每个标签的描述
+        const tagDescriptions = {
+            "目标·支援限制": "小队联络次数-1",
+            "目标·信号干扰": "小队联络次数-2",
+            "目标·折戟Ⅰ": "近卫、医疗、先锋干员总数不得超过10名（不包含临时招募）",
+            "目标·折戟Ⅱ": "近卫、医疗、先锋干员总数不得超过7名（不包含临时招募）",
+            "目标·折戟Ⅲ": "五星及以上近卫、医疗、先锋干员总数不得超过4名（不包含临时招募）",
+            "目标·盲目Ⅰ": "狙击、医疗、术士干员总数不得超过10名（不包含临时招募）",
+            "目标·盲目Ⅱ": "狙击、医疗、术士干员总数不得超过7名（不包含临时招募）",
+            "目标·盲目Ⅲ": "五星及以上狙击、医疗、术士干员总数不得超过4名（不包含临时招募）",
+            "环境·大风天": "除前三层外，每层探索结束时，抗干扰指数不可超过5",
+            "环境·暴风雪": "除前三层外，每层探索结束时，抗干扰指数不可超过3",
+            "环境·寒灾": "除前两层外，每层探索结束时，抗干扰指数不可超过2",
+            "探险组·环境科考": "指定通关等级为3",
+            "探险组·模因干扰": "指定通关等级为7",
+            "探险组·挑战自然": "指定通关等级为12",
+            "探险组·直面天灾": "指定通关等级为15",
+            "目标·有限支援": "临时招募干员数不可超过5名，但总得分额外+ 50分",
+            "目标·通讯干扰": "临时招募干员数不可超过3名，但总得分额外+ 100分",
+            "目标·孤立无援": "临时招募干员数不可超过1名，且不可招募临时6星干员，但总得分额外 + 150分",
+            "分队·职业合约": "仅可选择突击战术、堡垒战术、远程战术、破坏战术、高规格、永恒狩猎、生活至上、科学主义、特训分队",
+            "分队·科考合约": "仅可选择指挥、集群、矛头、后勤、永恒狩猎、生活至上、科学主义、特训分队",
+            "木裂战士·清醒意识": "在第四层、第五层的任意一层战斗中，木裂战士免疫眩晕、冰冻、睡眠（操作实现）。若在成功通关结局之前未执行则视作未选取",
+            "失与得·无人生还": "不可从失与得节点中换取密文板和收藏品",
+            "环境·资金困难Ⅰ": "可取源石锭数额减少30 %",
+            "环境·资金困难Ⅱ": "可取源石锭数额减少35 %",
+            "环境·资金困难Ⅲ": "可取源石锭数额减少40 %，且不可补充金额",
+            "坎诺特·律法保护": "不可攻打坎诺特",
+            "环境·高压作战": "团队每名六星干员出场次数不可超过2次，超出后扣除500分",
+            "环境·交战区": "总招募六星干员数不可超过8，临时招募不算",
+            "目标·最后防线Ⅰ": "本次探索，除区域最终战外，至多3次战斗允许敌人进入我方防御点，每超出1次扣除25分。",
+            "目标·最后防线Ⅱ": "本次探索，除区域最终战外，至多2次战斗允许敌人进入我方防御点，每超出1次扣除25分。",
+            "目标·最后防线Ⅲ": "本次探索，除区域最终战外，至多1次战斗允许敌人进入我方防御点，每超出1次扣除25分。",
+            "密文板·无效因果Ⅰ": "持有的因果密文板数量不可超过5",
+            "密文板·无效因果Ⅱ": "持有的因果密文板数量不可超过3",
+            "密文板·混乱布局Ⅰ": "持有的布局密文板数量不可超过5",
+            "密文板·混乱布局Ⅱ": "持有的布局密文板数量不可超过3",
+            "密文板·无解未来": "持有的密文板数量不可超过6",
+            "收藏品·缺失Ⅰ": "禁止选取支援道具，通过古地树实获取的收藏品不做计算",
+            "收藏品·缺失Ⅱ": "禁止选取支援道具、手系专业道具，通过古地树实获取的收藏品不做计算",
+            "收藏品·缺失Ⅲ": "禁止选取支援道具、手系专业道具、支柱系道具，通过古地树实获取的收藏品不做计算",
+            "环境·前路未卜": "先行一步节点中不可派遣干员"
+        }
+        const clearButton = document.getElementById('clear-button');
+        clearButton.addEventListener('click', function () {
+            // 重置所有已选择的标签
+            for (const tag in selectedTags) {
+                selectedTags[tag] = false;
+            }
+
+            // 更新单元格样式、描述和等级数
+            updateCellStyles();
+            descriptionDiv.innerHTML = '';
+            levelCountSpan.textContent = 0;
+        });
+        function formatSelectedTagDescription(tag) {
+            if (tagLevels[tag] == 1) {
+                newtagLevels = "Ⅰ"
+            }
+            else if (tagLevels[tag] == 2) {
+                newtagLevels = "Ⅱ"
+            }
+            else if (tagLevels[tag] == 3) {
+                newtagLevels = "Ⅲ"
+            }
+            return `(${newtagLevels})${tag}： ${tagDescriptions[tag]}`;
+        }
+
+        // 更新描述和等级数
+        function updateDescriptionAndLevel() {
+            descriptionDiv.innerHTML = ''; // 清空描述
+            levelCount = 0; // 重置等级数
+
+            for (const tag in selectedTags) {
+                if (selectedTags[tag]) { // 如果标签被选择
+                    // 使用tagLevels映射关系获取等级
+                    const level = tagLevels[tag] || (tag.includes("Ⅰ") ? 1 : (tag.includes("Ⅱ") ? 2 : (tag.includes("Ⅲ") ? 3 : 0)));
+                    levelCount += level;
+                    // 更新描述
+                    if (tagDescriptions[tag]) {
+                        const description = document.createElement('p');
+                        const formattedDescription = formatSelectedTagDescription(tag);
+                        description.textContent = formattedDescription;
+                        descriptionDiv.appendChild(description);
+                    }
+                }
+            }
+            levelCountSpan.textContent = levelCount; // 显示总等级数
+        }
+
+        function updateCellStyles() {
+            Array.from(table.getElementsByClassName('selectable')).forEach(cell => {
+                const cellTag = cell.dataset.description;
+
+                // 首先移除所有状态样式
+                cell.classList.remove('selected', 'disabled');
+
+                // 应用选中样式
+                if (selectedTags[cellTag]) {
+                    cell.classList.add('selected');
+                }
+
+                // 应用禁用样式
+                tagGroups.forEach(group => {
+                    if (group.includes(cellTag) && group.some(tag => selectedTags[tag])) {
+                        if (!selectedTags[cellTag]) {
+                            cell.classList.add('disabled');
+                        }
+                    }
+                });
+            });
+        }
+
+        // 点击单元格的处理函数
+        table.addEventListener('click', function (event) {
+            const cell = event.target;
+            if (cell.classList.contains('selectable')) {
+                const cellTag = cell.dataset.description;
+
+                // 判断单元格状态
+                if (!selectedTags[cellTag] && !cell.classList.contains('disabled')) { // 未被选择且没有被连锁禁用
+                    selectedTags[cellTag] = true; // 标记为已选择
+                    cell.classList.add('selected'); // 更新单元格样式为已选择
+
+                    // 将同组单元格更改为连锁禁用样式
+                    tagGroups.forEach(group => {
+                        if (group.includes(cellTag)) {
+                            group.forEach(tag => {
+                                if (tag !== cellTag) {
+                                    selectedTags[tag] = false; // 取消同组其他单元格的选择
+                                    const tagCell = document.querySelector(`[data-description="${tag}"]`);
+                                    if (tagCell) {
+                                        tagCell.classList.add('disabled');
+                                    }
+                                }
+                            });
+                        }
+                    });
+                } else if (selectedTags[cellTag]) { // 已选择
+                    selectedTags[cellTag] = false; // 取消选择
+                    cell.classList.remove('selected', 'disabled'); // 更新单元格样式为未选择且无禁用
+
+                    // 将同组单元格更改为未被选择且没有被连锁禁用样式
+                    tagGroups.forEach(group => {
+                        if (group.includes(cellTag)) {
+                            group.forEach(tag => {
+                                if (tag !== cellTag) {
+                                    const tagCell = document.querySelector(`[data-description="${tag}"]`);
+                                    if (tagCell) {
+                                        tagCell.classList.remove('disabled');
+                                    }
+                                }
+                            });
+                        }
+                    });
+                } else if (cell.classList.contains('disabled')) { // 连锁禁用状态
+                    selectedTags[cellTag] = true; // 将该单元格更改为已选中状态
+                    cell.classList.remove('disabled', 'selected'); // 移除禁用样式，添加已选中样式
+
+                    // 将同组单元格更改为连锁禁用样式
+                    tagGroups.forEach(group => {
+                        if (group.includes(cellTag)) {
+                            group.forEach(tag => {
+                                if (tag !== cellTag) {
+                                    selectedTags[tag] = false; // 取消同组其他单元格的选择
+                                    const tagCell = document.querySelector(`[data-description="${tag}"]`);
+                                    if (tagCell) {
+                                        tagCell.classList.add('disabled');
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }
+
+                updateCellStyles();
+                updateDescriptionAndLevel();
+            }
+        });
+
+        updateCellStyles();
+
+    </script>
+
+</body>
+
+</html>
