@@ -26,6 +26,8 @@
             width: 100%;
             overflow-x: auto;
             position: relative;
+            padding:20px;
+            margin-top:30px;
         }
 
         #selection-table {
@@ -76,12 +78,50 @@
             color: #fff;
             font-weight: bold;
         }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: grey;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: blueviolet;
+        }
     </style>
 </head>
 
 <body>
-    <h1>天嚣行动合约表</h1>
+    <ul>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/第二届重交杯">当期赛事主页</a></li>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/初赛">初赛合约表</a></li>
+        <li><a class="active" href="https://longxuanyue.github.io/chongjiaobei/个人赛">个人赛合约表</a></li>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/计算器">得分计算器</a></li>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/排行榜">排行榜</a></li>
+        <li style="float:right"><a href="https://longxuanyue.github.io/chongjiaobei/">返回</a></li>
+    </ul>
     <div class="selectiontable">
+        <h1>天嚣行动合约表</h1>
         <table id="selection-table">
             <tr>
                 <th>Ⅰ</th>
