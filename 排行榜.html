@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>重交杯官网</title>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            /*去掉默认的列表样式*/
+            margin: 0;
+            /*去掉默认的列表外边距*/
+            padding: 0;
+            /* 去掉默认的列表内边距*/
+            overflow: hidden;
+            /* 溢出部分隐藏*/
+            background-color: grey;
+            /* 背景颜色*/
+            position: fixed;
+            /* 绝对定位*/
+            top: 0;
+            /* 距离顶部*/
+            width: 100%;
+            /* 宽度*/
+        }
+
+        li {
+            float: left;
+            /*  浮动*/
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: blueviolet;
+        }
+
+        th {
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            /* 合并单元格边框 */
+        }
+
+        th,
+        td {
+            border: 1px solid #00CCCC;
+            text-align: center;
+        }
+
+        #ddd td {
+            background-color: #cc00a3;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/第二届重交杯">当期赛事主页</a></li>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/初赛">初赛合约表</a></li>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/个人赛">个人赛合约表</a></li>
+        <li><a href="https://longxuanyue.github.io/chongjiaobei/计算器">得分计算器</a></li>
+        <li><a class="active" href="https://longxuanyue.github.io/chongjiaobei/排行榜">排行榜</a></li>
+        <li style="float:right"><a href="https://longxuanyue.github.io/chongjiaobei/">返回</a></li>
+    </ul>
+    <main>
+        <div style="padding:20px;margin-top:30px;">
+            <h1>团队赛初赛排行榜</h1>
+            <table style="width:100%">
+                <tr>
+                    <th style="width:4%">排名</th>
+                    <th style="text-align: center;width:30%">团队名称</th>
+                    <th style="width:6%">合约等级</th>
+                    <th style="width:6%">通关难度</th>
+                    <th style="width:6%">得分</th>
+                    <th>成员1及其得分</th>
+                    <th>成员2及其得分</th>
+                    <th>成员3及其得分</th>
+                </tr>
+                <tr id="ddd">
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr id="ddd">
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
