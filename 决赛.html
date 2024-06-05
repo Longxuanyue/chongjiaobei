@@ -123,9 +123,9 @@
                 <td class="selectable" data-description="目标·协同失效Ⅰ">目标·协同失效Ⅰ</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·最后防线Ⅰ">目标·最后防线Ⅰ</td>
-                <td class="selectable" data-description="环境·资金困难Ⅰ">环境·资金困难Ⅰ</td>
-                <td class="selectable" data-description="坎诺特·律法保护">坎诺特·律法保护</td>
-                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="诡谲·穷困Ⅰ">诡谲·穷困Ⅰ</td>
+                <td class="selectable" data-description="诡谲·律法Ⅰ">诡谲·律法Ⅰ</td>
+                <td class="selectable" data-description="诡谲·购买条款Ⅰ">诡谲·购买条款Ⅰ</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
@@ -145,9 +145,9 @@
                 <td class="selectable" data-description="目标·协同失效Ⅱ">目标·协同失效Ⅱ</td>
                 <td class="selectable" data-description="失与得·无人生还">失与得·无人生还</td>
                 <td class="selectable" data-description="目标·最后防线Ⅱ">目标·最后防线Ⅱ</td>
-                <td class="selectable" data-description="环境·资金困难Ⅱ">环境·资金困难Ⅱ</td>
-                <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description="环境·交战区">环境·交战区</td>
+                <td class="selectable" data-description="诡谲·穷困Ⅱ">诡谲·穷困Ⅱ</td>
+                <td class="selectable" data-description="诡谲·律法Ⅱ">诡谲·律法Ⅱ</td>
+                <td class="selectable" data-description="诡谲·购买条款Ⅱ">诡谲·购买条款Ⅱ</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
@@ -167,7 +167,7 @@
                 <td class="selectable" data-description="目标·协同失效Ⅲ">目标·协同失效Ⅲ</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·最后防线Ⅲ">目标·最后防线Ⅲ</td>
-                <td class="selectable" data-description="环境·资金困难Ⅲ">环境·资金困难Ⅲ</td>
+                <td class="selectable" data-description="诡谲·穷困Ⅲ">诡谲·穷困Ⅲ</td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
@@ -194,14 +194,14 @@
             ["目标·支援限制", "目标·信号干扰", "目标·联络失灵"],
             ["目标·孤立Ⅰ", "目标·孤立Ⅱ", "目标·孤立Ⅲ"],
             ["目标·折戟Ⅰ", "目标·折戟Ⅱ", "目标·折戟Ⅲ", "目标·盲目Ⅰ", "目标·盲目Ⅱ", "目标·盲目Ⅲ"],
-            ["目标·协同失效Ⅰ", "目标·协同失效Ⅱ", "目标·协同失效Ⅲ","目标·乌合之众Ⅰ", "目标·乌合之众Ⅱ", "目标·乌合之众Ⅲ"],
+            ["目标·协同失效Ⅰ", "目标·协同失效Ⅱ", "目标·协同失效Ⅲ", "目标·乌合之众Ⅰ", "目标·乌合之众Ⅱ", "目标·乌合之众Ⅲ"],
             ["干扰·设备损坏Ⅰ", "干扰·设备损坏Ⅱ", "干扰·设备损坏Ⅲ"],
             ["分队·职业合约", "分队·科考合约", "分队·协同合约"],
             ["目标·最后防线Ⅰ", "目标·最后防线Ⅱ", "目标·最后防线Ⅲ"],
             ["失与得·无人生还", "木裂战士·清醒意识"],
-            ["环境·资金困难Ⅰ", "环境·资金困难Ⅱ", "环境·资金困难Ⅲ"],
-            ["坎诺特·律法保护"],
-            ["环境·交战区"]
+            ["诡谲·穷困Ⅰ", "诡谲·穷困Ⅱ", "诡谲·穷困Ⅲ"],
+            ["诡谲·律法Ⅰ", "诡谲·律法Ⅱ"],
+            ["诡谲·购买条款Ⅰ", "诡谲·购买条款Ⅱ"]
         ];
 
         // 定义单元格等级映射关系
@@ -238,8 +238,8 @@
             "分队·科考合约": 1,
             "失与得·无人生还": 2,
             "木裂战士·清醒意识": 2,
-            "坎诺特·律法保护": 1,
-            "环境·交战区": 2,
+            "诡谲·律法Ⅰ": 1,
+            "诡谲·律法Ⅱ": 2,
             "目标·折戟Ⅰ": 1,
             "目标·折戟Ⅱ": 2,
             "目标·折戟Ⅲ": 3,
@@ -249,9 +249,11 @@
             "目标·最后防线Ⅰ": 1,
             "目标·最后防线Ⅱ": 2,
             "目标·最后防线Ⅲ": 3,
-            "环境·资金困难Ⅰ": 1,
-            "环境·资金困难Ⅱ": 2,
-            "环境·资金困难Ⅲ": 3
+            "诡谲·穷困Ⅰ": 1,
+            "诡谲·穷困Ⅱ": 2,
+            "诡谲·穷困Ⅲ": 3,
+            "诡谲·购买条款Ⅰ": 1,
+            "诡谲·购买条款Ⅱ": 2
         };
 
         // 用于保存当前所选标签
@@ -290,11 +292,13 @@
             "目标·最后防线Ⅲ": false,
             "失与得·无人生还": false,
             "木裂战士·清醒意识": false,
-            "环境·资金困难Ⅰ": false,
-            "环境·资金困难Ⅱ": false,
-            "环境·资金困难Ⅲ": false,
-            "坎诺特·律法保护": false,
-            "环境·交战区": false
+            "诡谲·穷困Ⅰ": false,
+            "诡谲·穷困Ⅱ": false,
+            "诡谲·穷困Ⅲ": false,
+            "诡谲·律法Ⅰ": false,
+            "诡谲·律法Ⅱ": false,
+            "诡谲·购买条款Ⅰ": false,
+            "诡谲·购买条款Ⅱ": false
         };
         //每个标签的描述
         const tagDescriptions = {
@@ -326,12 +330,13 @@
             "分队·科考合约": "仅可选择指挥、集群、矛头、后勤、永恒狩猎、生活至上、科学主义、特训分队，团队赛时每名选手不可选择相同分队",
             "木裂战士·清醒意识": "在第四层、第五层的任意一层战斗中，木裂战士免疫眩晕、冰冻、睡眠（操作实现）。若在成功通关结局之前未执行则视作未选取",
             "失与得·无人生还": "不可从失与得节点中换取密文板和收藏品",
-            "环境·资金困难Ⅰ": "团队可取源石锭数额减少30 %",
-            "环境·资金困难Ⅱ": "团队可取源石锭数额减少35 %",
-            "环境·资金困难Ⅲ": "团队可取源石锭数额减少40 %，且不可补充金额",
-            "坎诺特·律法保护": "团队可攻打坎诺特的次数 - 1",
-            "环境·高压作战": "团队每名六星干员出场次数不可超过2次，超出后扣除500分",
-            "环境·交战区": "团队总招募六星干员数不可超过20，临时招募与核心干员不算",
+            "诡谲·穷困Ⅰ": "团队可取源石锭数额减少30 %",
+            "诡谲·穷困Ⅱ": "团队可取源石锭数额减少45 %，且不可补充金额",
+            "诡谲·穷困Ⅲ": "团队可取源石锭数额减少60 %，且不可补充金额",
+            "诡谲·律法Ⅰ": "团队可攻打坎诺特的次数 - 1",
+            "诡谲·律法Ⅱ": "团队可攻打坎诺特的次数 - 2",
+            "诡谲·购买条款Ⅰ": "每个商店中可购买次数最多为6",
+            "诡谲·购买条款Ⅰ": "每个商店中可购买次数最多为4",
             "目标·最后防线Ⅰ": "本次探索中，至多7次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加10分。团队赛中，未用完的次数可继承",
             "目标·最后防线Ⅱ": "本次探索中，至多6次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加20分。团队赛中，未用完的次数可继承",
             "目标·最后防线Ⅲ": "本次探索中，至多5次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加20分。团队赛中，未用完的次数可继承"
