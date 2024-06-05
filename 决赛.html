@@ -20,8 +20,16 @@
             margin-bottom: 10px;
         }
 
+        #selection-table-1 {
+            width: 1200px;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
         #selection-table th,
-        #selection-table td {
+        #selection-table td,
+        #selection-table-1 th,
+        #selection-table-1 td {
             border: 1px solid #000;
             padding: 5px;
             text-align: center;
@@ -31,6 +39,10 @@
         }
 
         #selection-table tbody td {
+            white-space: nowrap;
+        }
+
+        #selection-table-1 tbody td {
             white-space: nowrap;
         }
 
@@ -57,10 +69,17 @@
         }
 
         /* 表格头部的样式 */
-        #selection-table th {
+        #selection-table th{
             background-color: #ff0000;
             color: #fff;
             font-weight: bold;
+        }
+
+        #selection-table-1 th {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+            width: 23px;
         }
 
         ul {
@@ -121,7 +140,6 @@
                 <td class="selectable" data-description="分队·协同合约">分队·协同合约</td>
                 <td class="selectable" data-description="目标·乌合之众Ⅰ">目标·乌合之众Ⅰ</td>
                 <td class="selectable" data-description="目标·协同失效Ⅰ">目标·协同失效Ⅰ</td>
-                <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·最后防线Ⅰ">目标·最后防线Ⅰ</td>
                 <td class="selectable" data-description="诡谲·穷困Ⅰ">诡谲·穷困Ⅰ</td>
                 <td class="selectable" data-description="诡谲·律法Ⅰ">诡谲·律法Ⅰ</td>
@@ -143,15 +161,14 @@
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·乌合之众Ⅱ">目标·乌合之众Ⅱ</td>
                 <td class="selectable" data-description="目标·协同失效Ⅱ">目标·协同失效Ⅱ</td>
-                <td class="selectable" data-description="失与得·无人生还">失与得·无人生还</td>
                 <td class="selectable" data-description="目标·最后防线Ⅱ">目标·最后防线Ⅱ</td>
                 <td class="selectable" data-description="诡谲·穷困Ⅱ">诡谲·穷困Ⅱ</td>
                 <td class="selectable" data-description="诡谲·律法Ⅱ">诡谲·律法Ⅱ</td>
                 <td class="selectable" data-description="诡谲·购买条款Ⅱ">诡谲·购买条款Ⅱ</td>
-                <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description=""></td>
-                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="环境·无知">环境·无知</td>
+                <td class="selectable" data-description="环境·无谋">环境·无谋</td>
+                <td class="selectable" data-description="环境·无畏">环境·无畏</td>
+                <td class="selectable" data-description="环境·绝路">环境·绝路</td>
             </tr>
             <tr>
                 <th>Ⅲ</th>
@@ -165,7 +182,6 @@
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·乌合之众Ⅲ">目标·乌合之众Ⅲ</td>
                 <td class="selectable" data-description="目标·协同失效Ⅲ">目标·协同失效Ⅲ</td>
-                <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description="目标·最后防线Ⅲ">目标·最后防线Ⅲ</td>
                 <td class="selectable" data-description="诡谲·穷困Ⅲ">诡谲·穷困Ⅲ</td>
                 <td class="selectable" data-description=""></td>
@@ -174,6 +190,38 @@
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
                 <td class="selectable" data-description=""></td>
+            </tr>
+        </table>
+        <table id="selection-table-1">
+            <tr>
+                <th>Ⅰ</th>
+                <td class="selectable" data-description="密文·未知Ⅰ">密文·未知Ⅰ</td>
+                <td class="selectable" data-description="密文·混乱Ⅰ">密文·混乱Ⅰ</td>
+                <td class="selectable" data-description="合唱·同调">合唱·同调</td>
+                <td class="selectable" data-description="噤声·色彩">噤声·色彩</td>
+                <td class="selectable" data-description="噤声·始源Ⅰ">噤声·始源Ⅰ</td>
+                <td class="selectable" data-description="噤声·空白Ⅰ">噤声·空白Ⅰ</td>
+                <td class="selectable" data-description="噤声·终末Ⅰ">噤声·终末Ⅰ</td>
+            </tr>
+            <tr>
+                <th>Ⅱ</th>
+                <td class="selectable" data-description="密文·未知Ⅱ">密文·未知Ⅱ</td>
+                <td class="selectable" data-description="密文·混乱Ⅱ">密文·混乱Ⅱ</td>
+                <td class="selectable" data-description="合唱·扭曲">合唱·扭曲</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="噤声·始源Ⅱ">噤声·始源Ⅱ</td>
+                <td class="selectable" data-description="噤声·空白Ⅱ">噤声·空白Ⅱ</td>
+                <td class="selectable" data-description="噤声·终末Ⅱ">噤声·终末Ⅱ</td>
+            </tr>
+            <tr>
+                <th>Ⅲ</th>
+                <td class="selectable" data-description="密文·无解未来">密文·无解未来</td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description=""></td>
+                <td class="selectable" data-description="噤声·始源Ⅲ">噤声·始源Ⅲ</td>
+                <td class="selectable" data-description="噤声·空白Ⅲ">噤声·空白Ⅲ</td>
+                <td class="selectable" data-description="噤声·终末Ⅲ">噤声·终末Ⅲ</td>
             </tr>
         </table>
     </div>
@@ -185,6 +233,7 @@
 
     <script>
         const table = document.getElementById('selection-table');// 表格
+        const table1 = document.getElementById('selection-table-1');// 表格2
         const descriptionDiv = document.getElementById('selected-description');// 描述
         const levelCountSpan = document.getElementById('level-count');// 合约等级
         let levelCount = 0;// 合约等级
@@ -201,7 +250,10 @@
             ["失与得·无人生还", "木裂战士·清醒意识"],
             ["诡谲·穷困Ⅰ", "诡谲·穷困Ⅱ", "诡谲·穷困Ⅲ"],
             ["诡谲·律法Ⅰ", "诡谲·律法Ⅱ"],
-            ["诡谲·购买条款Ⅰ", "诡谲·购买条款Ⅱ"]
+            ["诡谲·购买条款Ⅰ", "诡谲·购买条款Ⅱ"],
+            ["密文·未知Ⅰ","密文·未知Ⅱ","密文·混乱Ⅰ","密文·混乱Ⅱ","密文·无解未来"],
+            ["噤声·色彩","噤声·始源Ⅰ","噤声·始源Ⅱ","噤声·始源Ⅲ","噤声·终末Ⅰ","噤声·终末Ⅱ","噤声·终末Ⅲ","噤声·空白Ⅰ","噤声·空白Ⅱ","噤声·空白Ⅲ"],
+            ["合唱·同调","合唱·扭曲"]
         ];
 
         // 定义单元格等级映射关系
@@ -253,7 +305,28 @@
             "诡谲·穷困Ⅱ": 2,
             "诡谲·穷困Ⅲ": 3,
             "诡谲·购买条款Ⅰ": 1,
-            "诡谲·购买条款Ⅱ": 2
+            "诡谲·购买条款Ⅱ": 2,
+            "环境·无知": 2,
+            "环境·无谋": 2,
+            "环境·无畏": 2,
+            "环境·绝路": 2,
+            "密文·未知Ⅰ":1,
+            "密文·未知Ⅱ":2,
+            "密文·混乱Ⅰ":1,
+            "密文·混乱Ⅱ":2,
+            "密文·无解未来":3,
+            "噤声·色彩":1,
+            "噤声·始源Ⅰ":2,
+            "噤声·始源Ⅱ":2,
+            "噤声·始源Ⅲ":2,
+            "噤声·终末Ⅰ":2,
+            "噤声·终末Ⅱ":2,
+            "噤声·终末Ⅲ":2,
+            "噤声·空白Ⅰ":3,
+            "噤声·空白Ⅱ":3,
+            "噤声·空白Ⅲ":3,
+            "合唱·同调":2,
+            "合唱·扭曲":2
         };
 
         // 用于保存当前所选标签
@@ -298,7 +371,28 @@
             "诡谲·律法Ⅰ": false,
             "诡谲·律法Ⅱ": false,
             "诡谲·购买条款Ⅰ": false,
-            "诡谲·购买条款Ⅱ": false
+            "诡谲·购买条款Ⅱ": false,
+            "环境·无知": false,
+            "环境·无谋": false,
+            "环境·无畏": false,
+            "环境·绝路": false,
+            "密文·未知Ⅰ":false,
+            "密文·未知Ⅱ":false,
+            "密文·混乱Ⅰ":false,
+            "密文·混乱Ⅱ":false,
+            "密文·无解未来":false,
+            "噤声·色彩":false,
+            "噤声·始源Ⅰ":false,
+            "噤声·始源Ⅱ":false,
+            "噤声·始源Ⅲ":false,
+            "噤声·终末Ⅰ":false,
+            "噤声·终末Ⅱ":false,
+            "噤声·终末Ⅲ":false,
+            "噤声·空白Ⅰ":false,
+            "噤声·空白Ⅱ":false,
+            "噤声·空白Ⅲ":false,
+            "合唱·同调":false,
+            "合唱·扭曲":false
         };
         //每个标签的描述
         const tagDescriptions = {
@@ -339,7 +433,28 @@
             "诡谲·购买条款Ⅰ": "每个商店中可购买次数最多为4",
             "目标·最后防线Ⅰ": "本次探索中，至多7次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加10分。团队赛中，未用完的次数可继承",
             "目标·最后防线Ⅱ": "本次探索中，至多6次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加20分。团队赛中，未用完的次数可继承",
-            "目标·最后防线Ⅲ": "本次探索中，至多5次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加20分。团队赛中，未用完的次数可继承"
+            "目标·最后防线Ⅲ": "本次探索中，至多5次战斗可以扣除生命值，每超出1次扣70分。每剩余一次加20分。团队赛中，未用完的次数可继承",
+            "环境·无知": "先行一步节点中总派遣干员数不超过2",
+            "环境·无谋": "失与得节点中，换取密文板和收藏品的总数不超过4",
+            "环境·无畏": "进入深埋秘境次数不超过2",
+            "环境·绝路": "一次探索中，总变道次数不超过4",
+            "密文·未知Ⅰ": "每层结束时持有的本因密文板数量不可超过5",
+            "密文·未知Ⅱ": "每层结束时持有的本因密文板数量不可超过3",
+            "密文·混乱Ⅰ": "每层结束时持有的布局密文板数量不可超过5",
+            "密文·混乱Ⅱ": "每层结束时持有的布局密文板数量不可超过3",
+            "密文·无解未来": "每层结束时持有的密文板总数不可超过6",
+            "噤声·色彩": "宣告密文板时不可使用彩板",
+            "噤声·始源Ⅰ": "宣告密文板时不可使用红色本因板和彩板",
+            "噤声·始源Ⅱ": "宣告密文板时不可使用绿色本因板和彩板",
+            "噤声·始源Ⅲ": "宣告密文板时不可使用蓝色本因板和彩板",
+            "噤声·终末Ⅰ": "宣告密文板时不可使用红色布局板和彩板",
+            "噤声·终末Ⅱ": "宣告密文板时不可使用绿色布局板和彩板",
+            "噤声·终末Ⅲ": "宣告密文板时不可使用蓝色布局板和彩板",
+            "噤声·空白Ⅰ": "宣告密文板时不可使用红色板和彩板",
+            "噤声·空白Ⅱ": "宣告密文板时不可使用绿色板和彩板",
+            "噤声·空白Ⅲ": "宣告密文板时不可使用蓝色板和彩板",
+            "合唱·同调": "宣告时必须出现协语",
+            "合唱·扭曲": "宣告时出现协语的次数不超过2"
         }
         const clearButton = document.getElementById('clear-button');
         clearButton.addEventListener('click', function () {
@@ -352,6 +467,7 @@
             updateCellStyles();
             descriptionDiv.innerHTML = '';
             levelCountSpan.textContent = 0;
+            levelCount = 0; // 重置总等级
         });
         function formatSelectedTagDescription(tag) {
             if (tagLevels[tag] == 1) {
@@ -389,30 +505,32 @@
         }
 
         function updateCellStyles() {
-            Array.from(table.getElementsByClassName('selectable')).forEach(cell => {
-                const cellTag = cell.dataset.description;
+            [table, table1].forEach(tbl => {
+                Array.from(tbl.getElementsByClassName('selectable')).forEach(cell => {
+                    const cellTag = cell.dataset.description;
 
-                // 首先移除所有状态样式
-                cell.classList.remove('selected', 'disabled');
+                    // 首先移除所有状态样式
+                    cell.classList.remove('selected', 'disabled');
 
-                // 应用选中样式
-                if (selectedTags[cellTag]) {
-                    cell.classList.add('selected');
-                }
-
-                // 应用禁用样式
-                tagGroups.forEach(group => {
-                    if (group.includes(cellTag) && group.some(tag => selectedTags[tag])) {
-                        if (!selectedTags[cellTag]) {
-                            cell.classList.add('disabled');
-                        }
+                    // 应用选中样式
+                    if (selectedTags[cellTag]) {
+                        cell.classList.add('selected');
                     }
+
+                    // 应用禁用样式
+                    tagGroups.forEach(group => {
+                        if (group.includes(cellTag) && group.some(tag => selectedTags[tag])) {
+                            if (!selectedTags[cellTag]) {
+                                cell.classList.add('disabled');
+                            }
+                        }
+                    });
                 });
             });
         }
 
         // 点击单元格的处理函数
-        table.addEventListener('click', function (event) {
+        function handleCellClick(event) {
             const cell = event.target;
             if (cell.classList.contains('selectable')) {
                 const cellTag = cell.dataset.description;
@@ -476,10 +594,12 @@
                 updateCellStyles();
                 updateDescriptionAndLevel();
             }
-        });
+        }
+
+        table.addEventListener('click', handleCellClick);
+        table1.addEventListener('click', handleCellClick);
 
         updateCellStyles();
-
     </script>
 
 </body>
